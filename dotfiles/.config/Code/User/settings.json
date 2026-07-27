@@ -1,4 +1,7 @@
 {
+  "editor.fontFamily": "'MesloLGS NF', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontSize": 12,
+  "terminal.integrated.fontFamily": "MesloLGS NF",
     "workbench.iconTheme": "material-icon-theme",
     "python.analysis.typeCheckingMode": "standard",
     "files.trimTrailingWhitespace": true,
@@ -10,5 +13,6 @@
             "source.organizeImports.ruff": "explicit"
         },
         "editor.defaultFormatter": "charliermarsh.ruff"
-    }
+    },
+    "workbench.colorTheme": "Tokyo Night"
 }

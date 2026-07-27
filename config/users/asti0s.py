@@ -1,9 +1,11 @@
 from decman import Module
 from decman.plugins import pacman
+from modules.kitty import Kitty
 from modules.niri import Niri
 from modules.plymouth_theme import PlymouthTheme
 from modules.ssh import SSH
 from modules.vscode import VSCode
+from modules.zsh import ZSH
 
 
 class Asti0s(Module):
@@ -34,10 +36,11 @@ class Asti0s(Module):
             "unzip",
             "which",
             "wget",
-            "kitty",
             "zen-browser-bin",
             "tree",
+            "github-cli",
+            "vesktop",
         }
 
 
-user_modules: list[Module] = [Niri(), VSCode(), PlymouthTheme(), SSH()]
+user_modules: list[Module] = [Niri(), VSCode(), PlymouthTheme(), SSH(), ZSH(), Kitty()]
