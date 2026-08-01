@@ -17,6 +17,8 @@ class Kitty(Module):
         return user_symlinks(
             {
                 ".config/kitty/kitty.conf",
-                ".config/kitty/current-theme.conf",
+                ".config/kitty/colors.conf",
+                ".config/flavours/templates/kitty/templates/config.yaml",
+                ".config/flavours/templates/kitty/templates/default.mustache",
             }
         )

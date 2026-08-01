@@ -1,0 +1,72 @@
+
+binds {
+    Super+K { show-hotkey-overlay; }
+    Mod+Q repeat=false { close-window; }
+    Mod+O repeat=false { toggle-overview; }
+
+    // Maximize & fullscreen
+    Mod+Return { maximize-column; }
+    Mod+Shift+Return { fullscreen-window; }
+    Mod+Ctrl+Return { maximize-window-to-edges; }
+
+    Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+
+    // Audio keys
+    XF86AudioRaiseVolume    allow-when-locked=true  { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
+    XF86AudioLowerVolume    allow-when-locked=true  { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioMute           allow-when-locked=true  { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute        allow-when-locked=true  { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+    // Player keys
+    XF86AudioPlay   allow-when-locked=true  { spawn-sh "playerctl play-pause"; }
+    XF86AudioStop   allow-when-locked=true  { spawn-sh "playerctl stop"; }
+    XF86AudioPrev   allow-when-locked=true  { spawn-sh "playerctl previous"; }
+    XF86AudioNext   allow-when-locked=true  { spawn-sh "playerctl next"; }
+
+    // Brightness keys
+    XF86MonBrightnessUp     allow-when-locked=true  { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+    XF86MonBrightnessDown   allow-when-locked=true  { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+
+    // Window focus
+    Mod+Left    { focus-column-left; }
+    Mod+Right   { focus-column-right; }
+
+    // Window move
+    Mod+Ctrl+Left   { move-column-left; }
+    Mod+Ctrl+Right  { move-column-right; }
+    Mod+Ctrl+Up     { move-window-to-workspace-up; }
+    Mod+Ctrl+Down   { move-window-to-workspace-down; }
+
+    // Workspace focus
+    Mod+Up                              { focus-workspace-up; }
+    Mod+Down                            { focus-workspace-down; }
+    Mod+WheelScrollUp   cooldown-ms=150 { focus-workspace-up; }
+    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Mod+ampersand   { focus-workspace 1; }
+    Mod+eacute      { focus-workspace 2; }
+    Mod+quotedbl    { focus-workspace 3; }
+    Mod+apostrophe  { focus-workspace 4; }
+    Mod+parenleft   { focus-workspace 5; }
+    Mod+Minus       { focus-workspace 6; }
+    Mod+egrave      { focus-workspace 7; }
+    Mod+underscore  { focus-workspace 8; }
+    Mod+ccedilla    { focus-workspace 9; }
+
+    // Workspace move
+    Mod+Shift+Up    { move-workspace-up; }
+    Mod+Shift+Down  { move-workspace-down; }
+
+    // Set column width
+    Mod+Shift+Minus { set-column-width "-10%"; }
+    Mod+Shift+Equal { set-column-width "+10%"; }
+
+    // Screnshot
+    Print { screenshot; }
+    Ctrl+Print { screenshot-screen; }
+    Alt+Print { screenshot-window; }
+
+    // Quit niri
+    Ctrl+Alt+Delete { quit; }
+}

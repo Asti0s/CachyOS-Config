@@ -1,5 +1,4 @@
-import decman
-from decman import Module, Store, prg
+from decman import Directory, Module, Store, prg
 from helpers import SYSTEM_DIR
 
 
@@ -10,9 +9,9 @@ class PlymouthTheme(Module):
     def on_enable(self, store: Store):
         prg(["plymouth-set-default-theme", "-R", "circle_hud"])
 
-    def directories(self) -> dict[str, decman.Directory]:
+    def directories(self) -> dict[str, Directory]:
         return {
-            "/usr/share/plymouth/themes": decman.Directory(
+            "/usr/share/plymouth/themes": Directory(
                 source_directory=f"{SYSTEM_DIR}/plymouth-themes"
             )
         }

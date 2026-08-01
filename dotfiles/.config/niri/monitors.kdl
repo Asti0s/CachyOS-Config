@@ -1,0 +1,4 @@
+// Framework 13's screen
+output "eDP-1" {
+    mode "2256x1504@59.999"
+}

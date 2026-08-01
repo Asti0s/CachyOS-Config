@@ -30,4 +30,6 @@ class Framework(Module):
 
     @systemd.units
     def systemd_units(self) -> set[str]:
-        return {"intel_lpmd.service"}
+        return {
+            "intel_lpmd.service",
+        }

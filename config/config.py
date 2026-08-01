@@ -1,8 +1,4 @@
 import decman
-
-if decman.pacman is None or decman.aur is None or decman.systemd is None:
-    raise RuntimeError("decman plugins not initialized")
-
 from modules.base import BaseConfig
 
 decman.modules += [BaseConfig()]

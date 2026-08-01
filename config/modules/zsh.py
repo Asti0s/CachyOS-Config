@@ -13,7 +13,9 @@ class ZSH(Module):
 
     @pacman.packages
     def pacman_packages(self) -> set[str]:
-        return {"zsh"}
+        return {
+            "zsh",
+        }
 
     @aur.packages
     def aur_packages(self) -> set[str]:

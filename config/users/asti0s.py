@@ -1,9 +1,11 @@
 from decman import Module
-from decman.plugins import pacman
+from decman.plugins import pacman, systemd
+from modules.fastfetch import FastFetch
 from modules.kitty import Kitty
 from modules.niri import Niri
 from modules.plymouth_theme import PlymouthTheme
 from modules.ssh import SSH
+from modules.sudoers import Sudoers
 from modules.vscode import VSCode
 from modules.zsh import ZSH
 
@@ -18,9 +20,6 @@ class Asti0s(Module):
             # -----------------------------
             # Shell & env
             # -----------------------------
-            "fish",
-            "cachyos-fish-config",
-            "bash-completion",
             "xdg-user-dirs",
             # -----------------------------
             # Tools
@@ -29,18 +28,36 @@ class Asti0s(Module):
             "nano-syntax-highlighting",
             "git",
             "htop",
-            "fastfetch",
             "python",
             "python-packaging",
             "unrar",
             "unzip",
             "which",
             "wget",
-            "zen-browser-bin",
             "tree",
             "github-cli",
+            # -----------------------------
+            # Apps
+            # -----------------------------
             "vesktop",
+            "tailscale",
+            "zen-browser-bin",
+        }
+
+    @systemd.units
+    def systemd_units(self) -> set[str]:
+        return {
+            "tailscaled.service",
         }
 
 
-user_modules: list[Module] = [Niri(), VSCode(), PlymouthTheme(), SSH(), ZSH(), Kitty()]
+user_modules: list[Module] = [
+    Niri(),
+    VSCode(),
+    PlymouthTheme(),
+    SSH(),
+    ZSH(),
+    Kitty(),
+    Sudoers(),
+    FastFetch(),
+]

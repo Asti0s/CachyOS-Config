@@ -1,0 +1,27 @@
+
+window-rule {
+    default-column-width { proportion 0.5; }
+
+    focus-ring {
+        width 1
+
+        active-gradient from="#80c8ff" to="#c7ff7f" angle=45 relative-to="workspace-view"
+        inactive-color "#505050"
+    }
+
+    geometry-corner-radius 15
+    clip-to-geometry true
+    draw-border-with-background false
+
+    background-effect {
+        xray false
+        blur true
+    }
+}
+
+blur {
+    passes 2
+    offset 0.5
+    noise 0.05
+    saturation 1
+}

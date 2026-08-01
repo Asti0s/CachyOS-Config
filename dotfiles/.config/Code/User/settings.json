@@ -2,17 +2,19 @@
   "editor.fontFamily": "'MesloLGS NF', 'Droid Sans Mono', 'monospace', monospace",
   "editor.fontSize": 12,
   "terminal.integrated.fontFamily": "MesloLGS NF",
-    "workbench.iconTheme": "material-icon-theme",
-    "python.analysis.typeCheckingMode": "standard",
-    "files.trimTrailingWhitespace": true,
-    "editor.renderWhitespace": "all",
-    "[python]": {
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.fixAll.ruff": "explicit",
-            "source.organizeImports.ruff": "explicit"
-        },
-        "editor.defaultFormatter": "charliermarsh.ruff"
+  "workbench.iconTheme": "material-icon-theme",
+  "python.analysis.typeCheckingMode": "standard",
+  "files.trimTrailingWhitespace": true,
+  "editor.renderWhitespace": "all",
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
     },
-    "workbench.colorTheme": "Tokyo Night"
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  /* Start flavours */
+  "workbench.colorTheme": "Catppuccin Mocha",
+  /* End flavours */
 }

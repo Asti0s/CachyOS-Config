@@ -1,6 +1,6 @@
 import os
 
-from decman.core.fs import Symlink
+from decman import Symlink
 
 # __file__ = config/_helpers.py → parent = config/ → grandparent = repo root
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

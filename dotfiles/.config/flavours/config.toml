@@ -1,0 +1,12 @@
+[[items]]
+file = "~/.config/kitty/colors.conf"
+template = "kitty"
+subtemplate = "default"
+rewrite = true
+
+[[items]]
+file = "~/.config/Code/User/settings.json"
+template = "vscode"
+subtemplate = "default"
+start= "/* Start flavours */"
+end = "/* End flavours */"

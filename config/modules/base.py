@@ -1,5 +1,4 @@
-import decman
-from decman import Module
+from decman import File, Module, Symlink
 from decman.plugins import aur, pacman, systemd
 from helpers import SYSTEM_DIR
 
@@ -78,7 +77,9 @@ class BaseConfig(Module):
 
     @aur.packages
     def packages_aur(self) -> set[str]:
-        return {"decman"}
+        return {
+            "decman",
+        }
 
     @systemd.units
     def systemd_units(self) -> set[str]:
@@ -90,12 +91,25 @@ class BaseConfig(Module):
             "bluetooth.service",
         }
 
-    def files(self) -> dict[str, decman.File]:
+    def symlinks(self) -> dict[str, str | Symlink]:
+        # Force systemd-resolved as DNS resolver
         return {
-            "/etc/mkinitcpio.conf": decman.File(
+            "/etc/resolv.conf": "/run/systemd/resolve/stub-resolv.conf",
+        }
+
+    def files(self) -> dict[str, File]:
+        return {
+            "/etc/mkinitcpio.conf": File(
                 source_file=f"{SYSTEM_DIR}/mkinitcpio.conf",
                 owner="root",
                 group="root",
                 permissions=644,
-            )
+            ),
+            # Tell NetworkManager to use systemd-resolved for DNS resolution
+            "/etc/NetworkManager/conf.d/dns.conf": File(
+                source_file=SYSTEM_DIR + "/NetworkManager/dns.conf",
+                group="root",
+                owner="root",
+                permissions=644,
+            ),
         }
