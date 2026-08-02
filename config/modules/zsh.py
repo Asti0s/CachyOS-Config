@@ -22,7 +22,6 @@ class ZSH(Module):
     def aur_packages(self) -> set[str]:
         return {
             "zsh-antidote",
-            "ttf-meslo-nerd-font-powerlevel10k",
         }
 
     def symlinks(self) -> dict[str, str | Symlink]:

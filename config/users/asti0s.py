@@ -1,6 +1,7 @@
 from decman import Module
 from decman.plugins import pacman, systemd
 from modules.fastfetch import FastFetch
+from modules.fonts import Fonts
 from modules.kitty import Kitty
 from modules.niri import Niri
 from modules.plymouth_theme import PlymouthTheme
@@ -60,4 +61,5 @@ user_modules: list[Module] = [
     Kitty(),
     Sudoers(),
     FastFetch(),
+    Fonts(),
 ]
