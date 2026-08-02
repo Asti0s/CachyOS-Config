@@ -109,11 +109,6 @@
       "keyColor": "magenta",
       "format": "{23}-{4}-{1} {14}:{18}:{20} {22}"
     },
-    {
-      "type": "locale",
-      "key": "└ └",
-      "keyColor": "magenta"
-    },
     { "type": "colors", "paddingLeft": 20, "symbol": "star" }
   ]
 }
